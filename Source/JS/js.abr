@@ -855,7 +855,7 @@ window.WAPI.sendChatstate = async function (state, chatId) {
 window.WAPI.getChat = function (id) {
     id = typeof id == "string" ? id : id._serialized;
     //const found = window.Store.Chat.get(id);
-    const found = WPP.whatsapp.Chat.get(id);
+    const found = WPP.whatsapp.ChatStore.get(id);
     if (found) found.sendMessage = (found.sendMessage) ? found.sendMessage : function () { return WPP.whatsapp.sendMessage.apply(this, arguments); };
     return found;
 };
